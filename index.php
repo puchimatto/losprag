@@ -4,7 +4,11 @@
 
 				<div id="inner-content" class="principal wrap clearfix">
 
+  <?php get_template_part( 'social' ); ?> 
+
 						<div id="main" class="twelvecol first clearfix" role="main">
+
+							
 							<ul class="grid cs-style-1">
 
 							<?php $count = 0; ?>
@@ -12,9 +16,10 @@
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   							<?php $count++; ?>      
 
-							    <li id="post-<?php the_ID(); ?>" <?php if ($count == 1) post_class( 'grande' ); ?><?php post_class( 'clearfix' ); ?> role="article">
-							        <figure>
-										<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('large'); ?></a>
+							    <li id="post-<?php the_ID(); ?>"  style="background-image:url( <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );  echo $feat_image; ?>
+ ); " <?php if ($count == 1) post_class( 'grande' ); ?><?php post_class( 'clearfix' ); ?> role="article">
+							        <figure >
+										 <br>
 										<figcaption>
 							                <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3 class="">
 							                <span><?php the_excerpt(); ?> </span>
@@ -55,7 +60,6 @@
 							</ul>
 						</div>
 
- 							<a href="#" class="more">ver más notas</a>
 
  
 				</div>

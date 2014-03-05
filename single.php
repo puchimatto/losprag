@@ -3,6 +3,7 @@
 			<div id="content">
 
 				<div id="inner-content" class="wrap clearfix">
+  <?php get_template_part( 'social' ); ?> 
 
 					<div id="main" class="ninecol first clearfix" role="main">
 
@@ -30,16 +31,15 @@
 								<section class="entry-plus clearfix" >
 									<div class= "foto"><?php the_post_thumbnail('medium'); ?></div>
 
-									<p><cite><?php echo get_post_meta($post->ID, 'my_meta_box_textlargo', true); ?></cite></p>
+									<p><?php echo get_post_meta($post->ID, 'my_meta_box_textlargo', true); ?></p>
 								</section>
 
 
 								<footer class="article-footer">
-									<?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
+ 
 								</footer>
 
-								<?php comments_template(); ?>
+								<!--<?php comments_template(); ?>-->
 
 							</article>
 

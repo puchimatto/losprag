@@ -30,7 +30,7 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-<link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800' rel='stylesheet' type='text/css'>
 
 		<link rel="stylesheet/less" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/library/less/style.less">
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/library/fonts.css" type="text/css" charset="utf-8" />
