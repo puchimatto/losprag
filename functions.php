@@ -244,4 +244,16 @@ function cd_meta_box_save( $post_id )
 				
 }
 
+/************* LOS PRAG FUNCTIONS *****************/
+function get_category_id($cat_name){
+	$term = get_term_by('name', $cat_name, 'category');
+	return $term->term_id;
+}
+function losprag_excerpt_more( $more ) {
+	return '[...]';
+}
+function losprag_init(){
+	add_filter('excerpt_more', 'losprag_excerpt_more');
+}
+add_action( 'after_setup_theme', 'losprag_init', 20 );
 ?>

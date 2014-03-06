@@ -38,11 +38,6 @@
                                         $category_count++;
                                         ${'category_list_1'}[] = array('ide'=>$catty->cat_ID,'name'=>$catty->cat_name,'url'=>$catty->category_nicename);
                                     }
-
-                                    function get_category_id($cat_name){
-                                        $term = get_term_by('name', $cat_name, 'category');
-                                        return $term->term_id;   
-                                    }
                                 ?>
                                  
                                     <?php foreach($category_list_1 as $item) { echo '<span class="',$item['url'],'"> </span><a href="?cat=',$item['ide'],'" >',$item['name'],'</a> '; } ?>
