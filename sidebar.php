@@ -5,19 +5,23 @@
 						<?php
 						    global $post;
 						    $categories = get_the_category();
-						     $args = array( 'numberposts' => 4, 'orderby' => 'rand', 'category' => $category[0]->term_id);
+						    $this_post = $post->ID;
+						     $args = array( 'numberposts' => 4, 'post__not_in' => array($this_post), 'orderby' => 'rand', 'category' => $category[0]->term_id);
 						     $rand_posts = get_posts( $args );
 						    foreach( $rand_posts as $post ) :
+
+
+
 						?>
 
 						    <div>
 
-						    	<div class ="sidetumb" style ="background-image:url(<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );  echo $feat_image; ?>);">
-						    	</div>
-						    	<span><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						    	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><div class ="sidetumb" style ="background-image:url(<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );  echo $feat_image; ?>);">
+						    	</div></a>
+						    	<p><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 						    		<?php the_title(); ?>
-						    	</a></span>
-						    	<p><?php echo substr(get_the_excerpt(),0,73); ?>..</p>
+						    	</a></p>
+						    	<p><?php echo substr(get_the_excerpt(),0,73); ?> [...]</p>
 
 						    </div>
 						<?php endforeach; ?>

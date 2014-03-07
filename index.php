@@ -4,7 +4,7 @@
 
 				<div id="inner-content" class="principal wrap clearfix">
 
-  <?php get_template_part( 'social' ); ?> 
+  					<?php get_template_part( 'social' ); ?> 
 
 						<div id="main" class="twelvecol first clearfix" role="main">
 
@@ -21,10 +21,22 @@
 							        <figure >
 										 <br>
 										<figcaption>
-							                <h3 class="h2"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3 class="">
-							                <span><?php the_excerpt(); ?> </span>
-							                <a href="<?php the_permalink() ?>" rel="bookmark" class="btn btn-6 btn-6d" title="<?php the_title_attribute(); ?>">LEER MÁS</a>
-							            </figcaption>
+											<div class="titulonota">
+							               		<h3 class="h2">
+							               			<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+							               		</h3 >
+							                </div>
+											<div class ="line">
+												<?php if ($count == 1) { ?>
+							                	<?php the_excerpt(); ?>
+							                	<?php } else { ?>
+							                	<p> <?php echo substr(get_the_excerpt(),0,73); ?> </p>
+							                	<?php } ?>
+							                </div>
+							                <div class="boton-nota"	>	
+							            	<a href="<?php the_permalink() ?>" rel="bookmark" class="btn btn-5 btn-5a icon-cart"><span>leer más</span></a>
+				                			</div>
+ 							            </figcaption>
 							        </figure>
 							    </li>
 						
