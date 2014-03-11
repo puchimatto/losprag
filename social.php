@@ -3,26 +3,22 @@
                             <div id="social">
                                 <ul>
                                     <li>
-                                        <a href="" rel="nofollow">
+                                        <a href="https://www.facebook.com/pages/Los-Prag/620145684724981" rel="nofollow" target="_blank">
                                             <img src= "<?php echo get_template_directory_uri(); ?>/library/images/facebook.png">
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a href="" rel="nofollow">
+                                        <a href="https://twitter.com/LosPrag" rel="nofollow" target="_blank">
                                             <img src= "<?php echo get_template_directory_uri(); ?>/library/images/twitter.png">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="" rel="nofollow">
+                                        <a href="http://instagram.com/losprag" rel="nofollow" target="_blank">
                                             <img src= "<?php echo get_template_directory_uri(); ?>/library/images/insta.png">
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="" rel="nofollow">
-                                            <img src= "<?php echo get_template_directory_uri(); ?>/library/images/youtube.png">
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </div>
                             <div id="categorias">

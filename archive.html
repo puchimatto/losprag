@@ -11,29 +11,10 @@
 							
 							<ul class="grid cs-style-1">
 
-			<?php
-			    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+							<?php $count = 0; ?>
 
-			$cat_id = get_cat_ID('podcast');
-			$args=array(
-			  'category__not_in' => $cat_id,
-			  'post_type' => 'post',
-			  'post_status' => 'publish',
-			  'posts_per_page' => 13,
-			  'caller_get_posts'=> 1,
-			          'paged' => $paged
-
-			);
- 			global $wp_query;
-
-			$count = 0;
-			$wp_query = new WP_Query($args);
-			while($wp_query->have_posts()) {
-			$wp_query ->the_post();
-			?>
-							 
-
-   							<?php $count++; ?>      
+							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+  							<?php $count++; ?>      
 
 							    <li id="post-<?php the_ID(); ?>"  style="background-image:url( <?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );  echo $feat_image; ?> ); " <?php if ($count == 1) post_class( 'grande' ); ?><?php post_class( 'clearfix' ); ?> role="article">
 							        <figure >
@@ -58,7 +39,7 @@
 							        </figure>
 							    </li>
 						
-    		<?php } ?>
+							<?php endwhile; ?>
 						
 
 									<?php if ( function_exists( 'bones_page_navi' ) ) { ?>
@@ -72,7 +53,21 @@
 											</nav>
 									<?php } ?>
 
-  
+							<?php else : ?>
+
+									<article id="post-not-found" class="hentry clearfix">
+											<header class="article-header">
+												<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+										</header>
+											<section class="entry-content">
+												<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+										</section>
+										<footer class="article-footer">
+												<p><?php _e( 'This is the error message in the index.php template.', 'bonestheme' ); ?></p>
+										</footer>
+									</article>
+
+							<?php endif; ?>
 							</ul>
 						</div>
 
